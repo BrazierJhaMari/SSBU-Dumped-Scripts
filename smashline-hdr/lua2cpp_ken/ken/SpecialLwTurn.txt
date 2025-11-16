@@ -57,7 +57,7 @@ unsafe extern "C" fn effect_speciallwturn(agent: &mut L2CAgentBase) {
         }
     }
     frame(lua_state, 8.0);
-    if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if is_excute(agent) {
             EFFECT(agent, Hash40::new("ken_savingattack_line_l"), Hash40::new("top"), 4, 10.5, 0, 0, 180, 5, 1, 0, 0, 0, 0, 0, 0, true);
         }
@@ -68,7 +68,7 @@ unsafe extern "C" fn effect_speciallwturn(agent: &mut L2CAgentBase) {
                 LANDING_EFFECT_FLIP(agent, Hash40::new("sys_whirlwind_l"), Hash40::new("sys_whirlwind_r"), Hash40::new("top"), 2, 0, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 0, 0, false, *EF_FLIP_NONE);
             }
             frame(lua_state, 8.0);
-            if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+            if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
                 if is_excute(agent) {
                     EFFECT(agent, Hash40::new("ken_savingattack_line_l"), Hash40::new("top"), 4, 10.5, 0, 0, 180, 5, 1.05, 0, 0, 0, 0, 0, 0, true);
                 }
@@ -90,7 +90,7 @@ unsafe extern "C" fn effect_speciallwturn(agent: &mut L2CAgentBase) {
                     COL_NORMAL(agent);
                 }
                 wait(lua_state, 1.0);
-                if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+                if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
                     if is_excute(agent) {
                         EFFECT(agent, Hash40::new("ken_savingattack_line_l2"), Hash40::new("top"), 4, 10.5, 0, 0, 180, 5, 1.15, 0, 0, 0, 0, 0, 0, true);
                     }

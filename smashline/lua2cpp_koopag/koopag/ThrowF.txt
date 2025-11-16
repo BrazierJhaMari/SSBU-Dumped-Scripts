@@ -7,7 +7,7 @@ unsafe extern "C" fn effect_throwf(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::EFFECT_FOLLOW_FLIP(agent, Hash40::new("sys_attack_arc_d"), Hash40::new("sys_attack_arc_d"), Hash40::new("top"), 0, 32, 15, 0, -10, 90, 3.2, true, *EF_FLIP_YZ);
     }
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT(agent, Hash40::new("sys_atk_smoke"), Hash40::new("top"), 25, 0, -5, 0, 0, 0, 1.7, 0, 0, 0, 0, 0, 0, true);
         }

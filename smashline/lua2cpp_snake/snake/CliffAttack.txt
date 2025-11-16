@@ -11,7 +11,7 @@ unsafe extern "C" fn game_cliffattack(agent: &mut L2CAgentBase) {
 
 unsafe extern "C" fn effect_cliffattack(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 15.0);
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT(agent, Hash40::new("sys_smash_flash"), Hash40::new("top"), -3, 3, -8, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, true);
         }

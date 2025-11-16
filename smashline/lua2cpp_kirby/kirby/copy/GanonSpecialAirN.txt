@@ -3,7 +3,7 @@ unsafe extern "C" fn effect_ganonspecialairn(agent: &mut L2CAgentBase) {
         macros::EFFECT_FOLLOW(agent, Hash40::new("ganon_majinken_start"), Hash40::new("havel"), 0, 0, 0, 0, 0, 0, 1, true);
     }
     frame(agent.lua_state_agent, 34.0);
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT_FOLLOW(agent, Hash40::new("ganon_majinken_flash"), Hash40::new("havel"), 3, 2, 0, 0, 0, 0, 1, true);
         }

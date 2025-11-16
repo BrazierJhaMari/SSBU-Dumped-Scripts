@@ -46,7 +46,7 @@ unsafe extern "C" fn effect_elightspecialn2(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::AFTER_IMAGE_OFF(agent, 4);
     }
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT_FOLLOW(agent, Hash40::new("elight_buster_wind"), Hash40::new("top"), 0, 0, 0, 0, 0, 180, -1.2, true);
         }

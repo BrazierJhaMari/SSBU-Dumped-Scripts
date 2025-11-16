@@ -16,7 +16,7 @@ unsafe extern "C" fn game_finalchange(agent: &mut L2CAgentBase) {
             0x141380(2119351891, 2.3);
             CAM_ZOOM_IN_arg5(0, 0);
         }
-        if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+        if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
             if macros::is_excute(agent) {
                 camera!(agent, *MA_MSC_CMD_CAMERA_CAM_OFFSET, 0, 0);
             }

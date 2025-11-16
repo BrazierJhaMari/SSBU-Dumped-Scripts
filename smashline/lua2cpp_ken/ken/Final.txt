@@ -15,7 +15,7 @@ unsafe extern "C" fn game_final(agent: &mut L2CAgentBase) {
         if macros::is_excute(agent) {
             macros::FT_START_CUTIN(agent);
         }
-        if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+        if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
             if macros::is_excute(agent) {
                 camera!(agent, *MA_MSC_CMD_CAMERA_CAM_OFFSET, 0, 0);
                 PostureModule::scale(agent.module_accessor, 3, 0);
@@ -237,7 +237,7 @@ unsafe extern "C" fn effect_final(agent: &mut L2CAgentBase) {
         macros::EFFECT_FOLLOW(agent, Hash40::new("ken_final_shippu_hold"), Hash40::new("top"), 0, 12, -1, 0, 0, 0, 1, true);
     }
     frame(agent.lua_state_agent, 10.0);
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT_FOLLOW(agent, Hash40::new("ken_final_shippu_start"), Hash40::new("top"), -10, 15, 0, 0, 0, 0, 0.6, true);
         }

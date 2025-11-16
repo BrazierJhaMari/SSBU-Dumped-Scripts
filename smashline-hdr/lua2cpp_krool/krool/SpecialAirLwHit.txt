@@ -39,7 +39,7 @@ unsafe extern "C" fn effect_specialairlwhit(agent: &mut L2CAgentBase) {
         EFFECT_OFF_KIND(agent, Hash40::new("krool_counter_flash_l"), true, true);
         EFFECT_OFF_KIND(agent, Hash40::new("sys_guard_mark"), true, true);
     }
-    if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if is_excute(agent) {
             EFFECT(agent, Hash40::new("krool_counter_success_body_l"), Hash40::new("top"), 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, true);
         }

@@ -125,7 +125,7 @@ unsafe extern "C" fn effect_finalairl(agent: &mut L2CAgentBase) {
         macros::LAST_EFFECT_SET_RATE(agent, 1.5);
     }
     frame(agent.lua_state_agent, 17.0);
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT_FOLLOW(agent, Hash40::new("eflame_catch_hand"), Hash40::new("arml"), 4, 0, 0, 0, 0, 0, 1, true);
         }

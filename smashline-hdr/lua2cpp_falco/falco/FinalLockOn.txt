@@ -27,7 +27,7 @@ unsafe extern "C" fn game_finallockon(agent: &mut L2CAgentBase) {
             FT_SET_FINAL_FEAR_FACE(agent, 25);
         }
     }
-    if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if is_excute(agent) {
             REQ_FINAL_START_CAMERA_arg3(Hash40::new("d04finallockon02.nuanmb"), false, false);
         }

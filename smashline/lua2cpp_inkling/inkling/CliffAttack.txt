@@ -18,7 +18,7 @@ unsafe extern "C" fn effect_cliffattack(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::LANDING_EFFECT(agent, Hash40::new("sys_atk_smoke"), Hash40::new("top"), 2, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, false);
     }
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT_FOLLOW(agent, Hash40::new("inkling_attack_arc"), Hash40::new("top"), -2, 5.5, 3, -10, -11, -180, 0.9, true);
         }

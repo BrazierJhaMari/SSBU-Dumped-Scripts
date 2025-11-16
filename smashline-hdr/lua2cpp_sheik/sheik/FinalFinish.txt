@@ -3,7 +3,7 @@ unsafe extern "C" fn game_finalfinish(agent: &mut L2CAgentBase) {
     let boma = agent.boma();
     if WorkModule::is_flag(boma, *FIGHTER_SHEIK_STATUS_FINAL_FLAG_HIT_ALL_OPPONENT) {
         frame(lua_state, 1.0);
-        if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+        if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
             if is_excute(agent) {
                 PostureModule::scale(boma, 5, 0);
                 0x154f30(-1599779927, 1.5);
@@ -79,7 +79,7 @@ unsafe extern "C" fn effect_finalfinish(agent: &mut L2CAgentBase) {
         FLASH_FRM(agent, 10, 0, 0, 0, 0);
     }
     frame(lua_state, 20.0);
-    if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if is_excute(agent) {
             EFFECT_FOLLOW(agent, Hash40::new("sheik_final_flash_l"), Hash40::new("haver"), 0, 6, 0, 0, 0, 0, 1.2, false);
             LAST_EFFECT_SET_RATE(agent, 1.3);

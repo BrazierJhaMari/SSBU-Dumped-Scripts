@@ -3,7 +3,7 @@ unsafe extern "C" fn game_finalairattack(agent: &mut L2CAgentBase) {
         WorkModule::set_int64(agent.module_accessor, hash40("final_air_attack") as i64, *FIGHTER_ELIGHT_INSTANCE_WORK_ID_INT_ESWORD_INHERIT_OPEN_MOTION_KIND);
     }
     frame(agent.lua_state_agent, 1.0);
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             PostureModule::scale(agent.module_accessor, 1, 0);
             0x3de840(-1268740023, 2.9);

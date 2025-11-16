@@ -27,7 +27,7 @@ unsafe extern "C" fn effect_attacks(agent: &mut L2CAgentBase) {
         EFFECT_BRANCH_SITUATION(agent, Hash40::new("null"), Hash40::new("sys_dash_smoke"), Hash40::new("top"), -5, 0, 0, 0, 0, 0, 0.6, 0, 0, 0, 0, 0, 0, false);
     }
     frame(lua_state, 2.0);
-    if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if is_excute(agent) {
             EFFECT_FOLLOW(agent, Hash40::new("zelda_phantom_line"), Hash40::new("top"), -5, 10, -5, 0, 0, 0, 1, true);
         }

@@ -21,7 +21,7 @@ unsafe extern "C" fn game_hoplanding(agent: &mut L2CAgentBase) {
 }
 
 unsafe extern "C" fn effect_hoplanding(agent: &mut L2CAgentBase) {
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::LANDING_EFFECT(agent, Hash40::new("null"), Hash40::new("rot"), 0, 0, 0, 0, 0, 0, 1.5, 0, 0, 0, 0, 0, 0, false);
             macros::LAST_EFFECT_SET_RATE(agent, 0.6);

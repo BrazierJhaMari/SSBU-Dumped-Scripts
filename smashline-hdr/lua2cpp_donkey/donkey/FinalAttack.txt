@@ -55,7 +55,7 @@ unsafe extern "C" fn effect_finalattack(agent: &mut L2CAgentBase) {
         EffectModule::remove_screen(boma, Hash40::new("bg_donkey_final"), -1);
         FT_REMOVE_FINAL_AURA(agent, true);
     }
-    if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if is_excute(agent) {
             EffectModule::req_screen(boma, Hash40::new("bg_donkey_final2"), false, false, false);
         }

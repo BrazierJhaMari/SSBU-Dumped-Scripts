@@ -14,7 +14,7 @@ unsafe extern "C" fn game_speciallwstart(agent: &mut L2CAgentBase) {
 }
 
 unsafe extern "C" fn effect_speciallwstart(agent: &mut L2CAgentBase) {
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         frame(agent.lua_state_agent, 4.0);
         if macros::is_excute(agent) {
             macros::EFFECT_FOLLOW(agent, Hash40::new("wolf_ref_start"), Hash40::new("top"), 0, 6.5, 1, 0, 0, 0, 1, true);

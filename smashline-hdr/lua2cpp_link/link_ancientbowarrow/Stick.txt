@@ -4,7 +4,7 @@ unsafe extern "C" fn game_stick(agent: &mut L2CAgentBase) {
     if is_excute(agent) {
         CAM_ZOOM_OUT_FINAL(agent);
     }
-    if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if is_excute(agent) {
             PostureModule::scale(boma, 3, 0);
             0x11e440(-872975833, 2);
@@ -37,7 +37,7 @@ unsafe extern "C" fn effect_stick(agent: &mut L2CAgentBase) {
     if is_excute(agent) {
         EFFECT_OFF_KIND(agent, Hash40::new("link_final_arrow_flare"), false, true);
     }
-    if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if is_excute(agent) {
             EFFECT(agent, Hash40::new("link_final_hit"), Hash40::new("top"), -5, 0, 0, 0, 0, 0, 3.5, 0, 0, 0, 0, 0, 0, true);
         }

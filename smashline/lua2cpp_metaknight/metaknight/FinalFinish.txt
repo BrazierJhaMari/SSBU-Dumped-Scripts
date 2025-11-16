@@ -4,7 +4,7 @@ unsafe extern "C" fn game_finalfinish(agent: &mut L2CAgentBase) {
         macros::CHECK_VALID_FINAL_START_CAMERA(agent, 0, 7, 20, 0, 0, 0);
     }
     if !WorkModule::is_flag(agent.module_accessor, *FIGHTER_INSTANCE_WORK_ID_FLAG_DISABLE_FINAL_START_CAMERA) {
-        if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+        if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
             if macros::is_excute(agent) {
                 CAM_ZOOM_IN_arg5(2, 0, 0.8, 0, 0);
                 camera!(agent, *MA_MSC_CMD_CAMERA_CAM_OFFSET, 40, 0);
@@ -26,7 +26,7 @@ if macros::is_excute(agent) {
 }
 frame(agent.lua_state_agent, 5.0);
 if !WorkModule::is_flag(agent.module_accessor, *FIGHTER_INSTANCE_WORK_ID_FLAG_DISABLE_FINAL_START_CAMERA) {
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::REQ_FINAL_START_CAMERA(agent, Hash40::new("d04finalfinishl.nuanmb"), true);
         }
@@ -94,7 +94,7 @@ unsafe extern "C" fn effect_finalfinish(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::EFFECT_FOLLOW(agent, Hash40::new("metaknight_sword"), Hash40::new("haver"), 0, 0, 0, 0, 0, 0, 1, true);
     }
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             methodlib::L2CValue::as_hash()const(Hash40::new("critical_hit"), Hash40::new("top"), 3, 3, 0, 6, -15, true);
             methodlib::L2CValue::as_hash()const();

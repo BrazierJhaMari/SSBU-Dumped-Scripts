@@ -37,7 +37,7 @@ unsafe extern "C" fn effect_final(agent: &mut L2CAgentBase) {
         EFFECT_FOLLOW(agent, 0x0cca57558b, Hash40::new("top"), 0, 15, 6, 0, -30, -140, 1.7, false);
     }
     frame(lua_state, 7.0);
-    if sv_animcmd::get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if sv_animcmd::get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if is_excute(agent) {
             EFFECT(agent, Hash40::new("roy_final_hit"), Hash40::new("top"), 0, 1, 25, 0, 90, 0, 1.1, 0, 0, 0, 0, 0, 0, true);
             EFFECT(agent, Hash40::new("roy_final_hit_2"), Hash40::new("top"), 0, 1, 25, 0, 90, 0, 1.1, 0, 0, 0, 0, 0, 0, true);

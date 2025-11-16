@@ -6,7 +6,7 @@ unsafe extern "C" fn game_specialairsstart(agent: &mut L2CAgentBase) {
 
 unsafe extern "C" fn effect_specialairsstart(agent: &mut L2CAgentBase) {
     if !WorkModule::is_flag(agent.module_accessor, *FIGHTER_BUDDY_STATUS_SPECIAL_S_FLAG_FAIL) {
-        if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+        if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
             if macros::is_excute(agent) {
                 macros::EFFECT_FOLLOW(agent, Hash40::new("buddy_special_s_start"), Hash40::new("top"), -2, 9, -14, 0, 0, 0, 1.2, true);
             }

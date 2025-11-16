@@ -6,7 +6,7 @@ unsafe extern "C" fn hash_0x1dba25cd1b(agent: &mut L2CAgentBase) {
         macros::EFFECT(agent, Hash40::new("demon_ragedrive_hit_l"), Hash40::new("top"), 2, 7, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, false);
         macros::EFFECT(agent, Hash40::new("demon_ragedrive_hit_shock_l)", Hash40::new("top"), 2, 7, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, false);
     }
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::DOWN_EFFECT(agent, Hash40::new("demon_ragedrive_ground"), Hash40::new("top"), 2, 0, 0, 0, 180, 0, 1.5, 0, 0, 0, 0, 0, 0, false);
             macros::EFFECT(agent, Hash40::new("demon_ragedrive_shock"), Hash40::new("top"), 2, 0, 0, 0, 180, 0, 1.5, 0, 0, 0, 0, 0, 0, false);

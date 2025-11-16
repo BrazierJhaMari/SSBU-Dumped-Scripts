@@ -58,7 +58,7 @@ macros::FT_MOTION_RATE(agent, 1.0);
 unsafe extern "C" fn effect_throwhi(agent: &mut L2CAgentBase) {
     frame(agent.lua_state_agent, 15.0);
     for _ in 0..5 {
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT_FLW_POS(agent, Hash40::new("sys_spin_wind"), Hash40::new("rot"), 0, 3.5, -1, 0, 0, 0, 1.1, true);
         }

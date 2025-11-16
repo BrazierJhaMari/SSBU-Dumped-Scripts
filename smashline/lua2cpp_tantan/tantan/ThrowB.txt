@@ -33,7 +33,7 @@ unsafe extern "C" fn effect_throwb(agent: &mut L2CAgentBase) {
         macros::LANDING_EFFECT(agent, Hash40::new("sys_atk_smoke"), Hash40::new("top"), 2, 0, 0, 0, 180, 0, 0.7, 0, 0, 0, 0, 0, 0, false);
     }
     frame(agent.lua_state_agent, 26.0);
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT(agent, Hash40::new("sys_attack_speedline"), Hash40::new("top"), -13, 25, 0, 0, 0, 90, 1, 0, 0, 0, 0, 0, 0, false);
             macros::LAST_EFFECT_SET_RATE(agent, 0.8);

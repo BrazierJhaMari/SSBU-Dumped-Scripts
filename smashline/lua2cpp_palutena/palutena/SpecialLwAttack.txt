@@ -26,7 +26,7 @@ unsafe extern "C" fn effect_speciallwattack(agent: &mut L2CAgentBase) {
     if macros::is_excute(agent) {
         macros::EFFECT_DETACH_KIND(agent, Hash40::new("palutena_backlight"), 0);
     }
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::EFFECT_FLW_POS(agent, Hash40::new("palutena_backlight"), Hash40::new("waist"), 10, -3, -1, 0, 90, 0, 1, true);
             EffectModule::set_disable_render_offset_last(agent.module_accessor);

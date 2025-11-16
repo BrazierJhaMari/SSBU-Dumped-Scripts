@@ -34,7 +34,7 @@ unsafe extern "C" fn effect_attacks4lw(agent: &mut L2CAgentBase) {
         macros::EFFECT_FOLLOW(agent, Hash40::new("koopajr_attack_s4"), Hash40::new("clownhandr"), 10, 0, 0, 0, 0, 90, 0.465, true);
         macros::LAST_EFFECT_SET_RATE(agent, 1.5);
     }
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         frame(agent.lua_state_agent, 18.0);
         if macros::is_excute(agent) {
             macros::EFFECT_FOLLOW(agent, Hash40::new("sys_spin_wind_s"), Hash40::new("clownattachr2"), 5, 0, 0, 0, 0, 90, 0.15, true);

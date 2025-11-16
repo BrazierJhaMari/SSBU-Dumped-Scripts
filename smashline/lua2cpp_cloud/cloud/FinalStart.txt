@@ -13,7 +13,7 @@ unsafe extern "C" fn game_finalstart(agent: &mut L2CAgentBase) {
             macros::FT_SET_FINAL_FEAR_FACE(agent, 60);
         }
     }
-    if get_value_float(agent, *SO_VAR_FLOAT_LR) < 0.0 {
+    if get_value_float(agent.lua_state_agent, *SO_VAR_FLOAT_LR) < 0.0 {
         if macros::is_excute(agent) {
             macros::REQ_FINAL_START_CAMERA(agent, Hash40::new("d04finalstart02.nuanmb"), true);
         }
